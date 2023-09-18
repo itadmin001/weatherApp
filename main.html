@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Wetha Appy</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/main.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/3275b1f20e.css">
+</head>
+
+<body>
+  <header>
+    <div class="collapse" id="navbarToggleExternalContent">
+        <div class="bg-dark p-4">
+          <h5 class="text-white h4">Collapsed content</h5>
+          <span class="text-muted">Toggleable via the navbar brand.</span>
+        </div>
+      </div>
+      <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <span id="title">Weather</span>
+        </div>
+      </nav>
+    </header>
+  <main>
+    <div class="container main-cont" style="height:1000px mb-5">
+        <div class="row d-flex flex-wrap upper-container mt-5">
+            <div class="col-lg m-2 current-weather">
+               
+            </div>
+            <div class="col-lg m-2 alerts">
+                <h3 class="text-center alerts-title">Alerts</h3>
+            </div>
+            <div class="col-lg mt-3 location">
+                <h3 class="text-center location">New York</h3>
+                <div id="location-data">
+
+                </div>
+            </div>
+        </div>
+        <div class="row button-group">
+            <div class="col mt-5">
+                <button class="btn btn-dark forecast-nav-buttons previous" onclick="loadPrevious()"><i class="bi bi-arrow-left-short"></i></button>
+                <button class="btn btn-dark forecast-nav-buttons" onclick="loadForecast()">Today</button>
+                <button class="btn btn-dark forecast-nav-buttons" onclick="loadTomorrow()">Tomorrow</button>
+                <button class="btn btn-dark forecast-nav-buttons next" onclick="loadNext()"><i class="bi bi-arrow-right-short"></i></button>
+                <button class="btn btn-dark forecast-nav-buttons">5 Day</button><span class="forecast-for"></span>
+            </div>
+        </div>
+        <div class="row hourly m-auto mt-2 mb-5" id="today">
+
+        </div>
+    </div>
+  </main>
+  <footer>
+    <!-- place footer here -->
+  </footer>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+5 day forcast in 3hr intervals - api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
+
+current weather data - https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid={API key}
+
+
+weatherAPI - 1437c50ccc304fb797554155231609
+
+http://api.weatherapi.com/v1/forecast.json?key=1437c50ccc304fb797554155231609&q=33771&days=2
+
+
+1694843100
+
+get from epoch now to +3600 for the next hour
++10,800 for 3 hour interval
+
+
+<div class="col-lg m-1 hr-dt hourly-detail-1">
+                <div class="time text-center mt-2">2:30 PM</div>
+                <div class="weather-icon text-center mb-4"><img src="http://openweathermap.org/img/w/01d.png" width=100 alt=""></div>
+                <div class="rain-icon mt-2"><img src="images/raindrops.png" alt=""><span class="rain-chance">20%</span></div>
+                <div class="wind-icon mt-2"><img src="images/wind.png" alt=""><span class="wind">5mph</span></div>
+                <div class="temp mt-4">90&deg</div>
+            </div>
+            <div class="col-lg m-1 hr-dt hourly-detail-2"></div>
+            <div class="col-lg m-1 hr-dt hourly-detail-3"></div>
+            <div class="col-lg m-1 hr-dt hourly-detail-4"></div>
+            <div class="col-lg m-1 hr-dt hourly-detail-5"></div>
+            <div class="col-lg m-1 hr-dt hourly-detail-6"></div>
+            <div class="col-lg m-1 hr-dt hourly-detail-7"></div>
+
+
+1694836800000 epoch
+1694892359899 this time
+
+
+ for(let i=x;i<=x+6;i++){
+        getHourly = tomorrow.forecast.forecastday[forecastDay].hour[i]
+        if(!getHourly){
+            forecastDay++
+            for(i=0;i<=3;i++){
+                getHourly = tomorrow.forecast.forecastday[forecastDay].hour[i]
+                time = getRealTime(getHourly.time_epoch*1000)
+                hourlyForcast(
+                    time,
+                    getHourly.condition.text,
+                    getHourly.condition.icon,
+                    getHourly.chance_of_rain,
+                    getHourly.wind_mph,
+                    getHourly.temp_f
+                    )
+            }
+            break
+        }else{
+            time = getRealTime(getHourly.time_epoch*1000)
+            hourlyForcast(
+                time,
+                getHourly.condition.text,
+                getHourly.condition.icon,
+                getHourly.chance_of_rain,
+                getHourly.wind_mph,
+                getHourly.temp_f
+                )
+        }
+    }
