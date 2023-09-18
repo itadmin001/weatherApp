@@ -322,7 +322,8 @@ const loadDetailView = async () => {
         detailView.current.uv
 
     )
-
+        document.querySelector('.location-title').innerHTML=""
+        document.querySelector('.location-title').insertAdjacentHTML('beforeend',`${detailView.location.name}, ${detailView.location.region}`)
 
 }
 
@@ -363,6 +364,7 @@ const loadTomorrow = async() => {
         next = 0
     }
     forecastForSpan.innerHTML=`Tomorrow for ${tomorrow.location.name}, ${tomorrow.location.region}`
+    
     getHourlyForecastStartCurrentTime(tomorrow,caller)
 }
 

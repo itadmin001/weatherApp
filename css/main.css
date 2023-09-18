@@ -227,6 +227,10 @@ body{
     margin-left:100px;
 }
 
+.location-title{
+    text-align:center;
+}
+
 table{
     width:200px;
 }
